@@ -28,7 +28,7 @@ pipeline {
                         npm version 1.0.${BUILD_NUMBER} --no-git-tag-version;
                         yarn;
                         yarn build;
-                        yarn release GH_TOKEN=${GH_TOKEN} --registry ${NPM_RELEASE};
+                        yarn release --registry ${NPM_RELEASE};
                     '''
                 }
             }
