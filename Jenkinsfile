@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         NPM_RELEASE = 'https://artifact.nguoidilam.com/api/npm/npm-release/'
-        GH_TOKEN= "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"
+        // GH_TOKEN= "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"
+        GH_TOKEN= credentials('github_nguoidilam')
     }
 
     options {
