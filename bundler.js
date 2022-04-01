@@ -83,7 +83,7 @@ module.exports = function bundle (Components, out, config) {
   const cmd = `${process.platform === 'win32' ? 'SET ' : ''}NODE_ENV=development parcel build ${entry} --dist-dir ${outDist}`
   console.log(`running: ${cmd}`)
   try {
-    execSync(cmd)
+    // execSync(cmd)
   } catch (error) {
     if(error.output && error.output.length){
       console.log(error.output[1].toString())
