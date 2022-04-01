@@ -3,8 +3,7 @@ pipeline {
 
     environment {
         NPM_RELEASE = 'https://artifact.nguoidilam.com/api/npm/npm-release/'
-        // GH_TOKEN= "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"
-        GH_TOKEN= credentials('github')
+        GH_TOKEN = credentials('github')
     }
 
     options {
@@ -29,7 +28,7 @@ pipeline {
                         npm version 1.0.${BUILD_NUMBER} --no-git-tag-version;
                         yarn;
                         yarn build;
-                        yarn release --registry ${NPM_RELEASE};
+                        yarn release GH_TOKEN=${GH_TOKEN} --registry ${NPM_RELEASE};
                     '''
                 }
             }
